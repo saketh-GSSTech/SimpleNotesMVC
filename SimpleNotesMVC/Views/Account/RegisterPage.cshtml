@@ -1,0 +1,29 @@
+﻿@model SimpleNotesMVC.Models.RegisterViewModel
+
+<h2>Register</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+<div class="USerRegisterPage">
+    <form asp-action="Register" method="post">
+        <div class="form-group">
+            <label>Email</label>
+            <input asp-for="Email" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input asp-for="Password" type="password" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input asp-for="ConfirmPassword" type="password" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+
+    <p>Already have an account? <a asp-action="LoginPage">Login here</a></p>
+
+</div>
