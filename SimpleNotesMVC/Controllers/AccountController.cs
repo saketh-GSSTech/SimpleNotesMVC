@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph.Models;
 using SimpleNotesMVC.ModelDTOs;
@@ -69,6 +71,12 @@ namespace SimpleNotesMVC.Controllers
 
             ViewBag.ErrorMessage = "Registration failed";
             return View(model);
+        }
+
+        public IActionResult Logout()
+        {
+           HttpContext.Session.Clear();
+            return RedirectToAction("LoginPage", "Account");
         }
     }
 }

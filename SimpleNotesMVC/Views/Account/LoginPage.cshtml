@@ -1,7 +1,5 @@
 ﻿@model SimpleNotesMVC.ModelDTOs.LoginModelDTO
 
-<h2>Login</h2>
-
 @if (ViewBag.ErrorMessage != null)
 {
     <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
@@ -9,6 +7,7 @@
 
 <div class="UserLoginPage">
     <form asp-action="Login" method="post">
+        <h2 class="LoginHeading">Login</h2>
         <div class="form-group">
             <label>Username</label>
             <input asp-for="Email" class="form-control" required />

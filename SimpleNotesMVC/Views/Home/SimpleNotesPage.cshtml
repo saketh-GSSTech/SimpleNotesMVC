@@ -4,55 +4,25 @@
 }
 
 <div class="SimpleNotesMainPage">
+    <div class="NotesPageTopBar">
+        <div class="user-info">
+            <span class="username">@User.Identity.Name</span>
+            <a asp-controller="Account" asp-action="Logout" class="logout-button">Logout</a>
+        </div>
+    </div>
     <div class="topbuttons">
-        <button id="create" type="button">Create Notes</button>
-        <button id="save" type="button">Save Notes</button>
+        <button id="create" type="button" class="ClearNotes">Clear Notes</button>
+        <button id="save" type="button" class="SaveNotes">Save Notes</button>
         <button id="saved" type="button">Your Notes</button>
-        <input id="search" type="search" placeholder="Search Notes...">
+        @* <input id="search" type="search" placeholder="Search Notes..."> *@
     </div>
 
     <div class="content">
         <div class="textarea">
-            <textarea id="title" placeholder="Enter title here..."></textarea>
-            <!-- <input id="title" type="text" value="Enter title here..."> -->
-            <textarea id="description" placeholder="Enter description here..."></textarea>
+            <textarea id="title" class="TitleOfTheNotes" placeholder="Enter title here..."></textarea>
+            <textarea id="description" class="DescriptionOfTheNotes" placeholder="Enter description here..."></textarea>
         </div>
     </div>>
 
     <div class="saved-notes">
 </div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-        $(document).ready(function () {
-            $("#save").click(function () {
-                var title = $("#title").val();
-                var description = $("#description").val();
-
-                if (title.trim() === "" || description.trim() === "") {
-                    alert("Title and Description cannot be empty!");
-                    return;
-                }
-
-                $.ajax({
-                    url: "/Home/SaveNote",
-                    type: "POST",
-                    data: { title: title, description: description },
-                    xhrFields: { withCredentials: true },
-                    success: function (response) {
-                        if (response.success) {
-                            alert("Note saved successfully!");
-                            $("#title").val("");
-                            $("#description").val("");
-                        }
-                    }
-                });
-            });
-
-            $("#create").click(function () {
-                $("#title").val("");
-                $("#description").val("");
-            });
-        });
-</script>
-

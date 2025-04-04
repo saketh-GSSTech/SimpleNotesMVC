@@ -1,0 +1,132 @@
+﻿/* Apply general styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.NotesPageTopBar {
+   // position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    .logout-button:hover {
+        background-color: #c82333;
+    }
+
+
+/* Main container should take full width */
+/*.SimpleNotesMainPage {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;*/ /* Take most of the screen width */
+    /*max-width: 1200px;*/ /* Set a max limit */
+/*}*/
+
+/* Top buttons should spread horizontally */
+.topbuttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+    /* Style buttons and search bar */
+    .topbuttons button,
+    .topbuttons input {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+.SaveNotes {
+    background-color: #28a745;
+    color:white;
+}
+
+.ClearNotes {
+    background-color: #007bff;
+    color: white;
+}
+/* Make search bar flexible */
+/*#search {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+}*/
+
+/* Content container */
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Title and description should be full width */
+.textarea {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Title field should be smaller */
+.TitleOfTheNotes {
+    height: 50px;
+    font-size: 18px;
+    padding: 8px;
+    max-width: 450px;
+}
+
+/* Description should be large */
+.DescriptionOfTheNotes {
+    height: 500px; /* Increase height */
+    font-size: 18px;
+    padding: 10px;
+}
+
+/* Make textareas full width */
+.textarea textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
